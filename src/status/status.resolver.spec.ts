@@ -14,5 +14,6 @@ describe('StatusResolver', () => {
 
   it('should be defined', () => {
     expect(resolver).toBeDefined();
+    expect(resolver.getRandomFromZeroTo(10)).toBeDefined();
   });
 });

@@ -7,8 +7,19 @@ type Status {
   date: String!
 }
 
+type User {
+  id: Int!
+  email: String!
+  name: String
+}
+
 type Query {
   GetStatus: Status!
   randomNumber: Float!
-  randomNumberZeroTo: Float!
+  randomNumberZeroTo(to: Int): Int!
+  users: [User!]!
+}
+
+type Mutation {
+  createUser(email: String!, name: String): User!
 }
