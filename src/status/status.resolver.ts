@@ -5,13 +5,15 @@ import { ObjectType, Field } from '@nestjs/graphql';
 class Status {
   @Field()
   message: string;
+  @Field()
+  date: string;
 }
 
 @Resolver(() => Status)
 export class StatusResolver {
   @Query(() => Status, { name: 'GetStatus' })
   getStatus(): Status {
-    return { message: 'Hello, GraphQL!' };
+    return { message: 'Hello, GraphQL!', date: new Date().toDateString() };
   }
 
   @Query(() => Float, { name: 'randomNumber' })

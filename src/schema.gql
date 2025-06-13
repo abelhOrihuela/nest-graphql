@@ -4,6 +4,7 @@
 
 type Status {
   message: String!
+  date: String!
 }
 
 type Query {
