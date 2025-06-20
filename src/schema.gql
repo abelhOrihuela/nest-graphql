@@ -23,3 +23,7 @@ type Query {
 type Mutation {
   createUser(email: String!, name: String): User!
 }
+
+type Subscription {
+  usersUpdated: [User!]!
+}

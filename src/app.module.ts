@@ -13,6 +13,15 @@ import { UserModule } from './user/user.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      // installSubscriptionHandlers: true,
+      // path: '/graphql',
+
+      subscriptions: {
+        'graphql-ws': true,
+      },
+      introspection: true,
+
+      // playground: true,
     }),
     StatusModule,
     UserModule,
